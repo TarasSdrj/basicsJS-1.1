@@ -83,7 +83,7 @@ function Product(
   //Returns the image according to the passed parameter, if the parameter was not passed,
   // then the first image from the array.
 
-  this.getImage = function getImage (n = 0) {
+  this.getImage = function getImage(n = 0) {
     return n.typeof == Number ? images[n] : images[0];
   };
   //Adds a new value to the "sizes" array
@@ -108,13 +108,12 @@ function Product(
   };
   //Returns the average product rating.
   this.getAverageRating = function getAverageRating() {
-    let result=0;
-    reviews.forEach(rating => {
-      result+=rating;
+    let result = 0;
+    reviews.forEach((rating) => {
+      result += rating;
     });
-    return result/reviews.length;
+    return result / reviews.length;
   };
-
 }
 
 function Reviews(ID = "", author = "", date = {}, comment = {}, rating = []) {
@@ -128,22 +127,38 @@ function Reviews(ID = "", author = "", date = {}, comment = {}, rating = []) {
 
 /*The search function in the array of objects that contain the text "search" 
 in the name or description.*/
-function searchProducts(products = [], search = "search"){
+function searchProducts(products = [], search = "search") {
   let length = search.length;
-  search = (search.endsWith('*') ? search.slice(0, length-1) : search + ' '). toLowerCase();
+  search = (
+    search.endsWith("*") ? search.slice(0, length - 1) : search + " "
+  ).toLowerCase();
   let result = [];
-  products.forEach(product => {
-    if(product.name.toLowerCase.includes(search)){
+  products.forEach((product) => {
+    if (product.name.toLowerCase.includes(search)) {
       result.push(product);
-    } 
+    }
   });
   return result;
 }
 
 /*The function of sorting an array of objects by the specified attribute. 
 Sorting by price, name and ID is supported.*/
-function sortProducts(products, sortRule){
-  while(products.length > 0)
+function sortProducts(products, sortRule) {
+  products.sort(sortRule);
+}
+//The function performs the sorting rule for the name
+function sortName(a, b) {
+  if (a.name > b.name) return 1;
+  if (a.name < b.name) return -1;
+  return 0;
+}
+//The function performs the sorting rule for the price.
+function sortPrice(a, b) {
+  return +a.price - +b.price;
+}
+//The function performs the sorting rule for the ID.
+function sortPrice(a, b) {
+  return +a.ID - +b.ID;
 }
 
 let prod = new Product(12331233, "jeck");
