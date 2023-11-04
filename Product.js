@@ -13,17 +13,17 @@ function Product(
   reviews = [{}],
   images = [""]
 ) {
-  //this.ID = ID; //product key - type String.
-  //this.name = name; //product name - type String.
-  //this.description = description; //short description - type String.
-  //this.price = price; //product price - type String.
-  //this.brand = brand; //product brand - type String.
+  this.ID = ID; //product key - type String.
+  this.name = name; //product name - type String.
+  this.description = description; //short description - type String.
+  this.price = price; //product price - type String.
+  this.brand = brand; //product brand - type String.
   this.sizes = sizes; //array of size - type array of string ['XS', 'S', 'M', 'L', 'XL', 'XXL'].
-  //this.activeSize = activeSize; //active size - tipe String.
-  //this.quantity = quantity; //Quantity of products in stock - type integer.
+  this.activeSize = activeSize; //active size - tipe String.
+  this.quantity = quantity; //Quantity of products in stock - type integer.
   this.date = Date(); //date - type Date {date(YYYY-MM-dd hh:mm:ss)}.
   this.reviews = reviews; //reviews - type array of object().
-  //this.images = images; //images - tupe array of String.
+  this.images = images; //images - tupe array of String.
   this.prototype = {
     set ID(ID) {
       this.ID = ID; //product key - type String.
@@ -83,7 +83,7 @@ function Product(
   //Returns the image according to the passed parameter, if the parameter was not passed,
   // then the first image from the array.
 
-  this.getImage = function (n = 0) {
+  this.getImage = function getImage (n = 0) {
     return n.typeof == Number ? images[n] : images[0];
   };
   //Adds a new value to the "sizes" array
@@ -126,6 +126,25 @@ function Reviews(ID = "", author = "", date = {}, comment = {}, rating = []) {
   //key one of 'service', 'price', 'value','quality'
 }
 
+/*The search function in the array of objects that contain the text "search" 
+in the name or description.*/
+function searchProducts(products = [], search = "search"){
+  let length = search.length;
+  search = (search.endsWith('*') ? search.slice(0, length-1) : search + ' '). toLowerCase();
+  let result = [];
+  products.forEach(product => {
+    if(product.name.toLowerCase.includes(search)){
+      result.push(product);
+    } 
+  });
+  return result;
+}
+
+/*The function of sorting an array of objects by the specified attribute. 
+Sorting by price, name and ID is supported.*/
+function sortProducts(products, sortRule){
+  while(products.length > 0)
+}
 
 let prod = new Product(12331233, "jeck");
 prod.name = "xxx";

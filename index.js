@@ -1,10 +1,21 @@
-var key=Symbol('js');
-var ob={};
-ob['name']='JavaScript';
-ob[key]='test';
-for(a in ob)console.log(a);
-var symbols=Object.getOwnPropertySymbols(ob);
-console.log( symbols[0].toString() );
-console.log(typeof symbols[0])
+let search = 'SeaRch 1'
+
+let length = search.length;
+if(search.endsWith('*')){console.log('true')}
+
+console.log(search.endsWith('*'));
+
+search = (search.endsWith('*') ? search.slice(0,length-1) : search + ' '). toLowerCase();
+console.log(length);
+console.log(search);
+let result = [];
+// products.forEach(product => {
+//   if(product.name.toLowerCase.indexOf(search) !== -1){
+
+//   }
+
+// });
+console.log( search +1);
+
 
 
