@@ -11,9 +11,13 @@ let validator = {
     log(result);
     return result !== null;
   },
-  cheksPhone: function validatePhone(exp){
+  //Checks if the phone number is valid.
+  validatePhone: function validatePhone(exp){
 
-    let cheksPhone =/ /;
+    if(exp.lenght()>=25){
+      return false;
+    }
+    let cheksPhone =/^([\s\-]+)?(\+(([\s\-]+)?\d){2})?([\s\-]+)?\(?([\s\-]+)?0(([\s\-]+)?\d){2}([\s\-]+)?\)?(([\s\-]+)?\d){7}([\s\-]+)?$/g;
     result = exp.match(cheksPhone)
     log(result);
     return result !== null;
