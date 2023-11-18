@@ -157,7 +157,7 @@ function sortPrice(a, b) {
   return +a.price - +b.price;
 }
 //The function performs the sorting rule for the ID.
-function sortPrice(a, b) {
+function sortID(a, b) {
   return +a.ID - +b.ID;
 }
 
@@ -169,4 +169,7 @@ console.log(prod.sizes);
 prod.addSize("XXXL");
 console.log(prod.sizes);
 prod.deleteSize("XL");
-console.log(prod.sizes);
+console.log(prod.prototype.__proto__);
+console.log(Object.keys(prod));
+console.log(prod.valueOf());
+console.log(prod.toString());

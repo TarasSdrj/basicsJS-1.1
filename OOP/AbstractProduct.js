@@ -84,20 +84,7 @@ class AbstractProduct {
         return this.images;
       },
     };
-    //Will return a string containing the values ​​of all available properties.
-    this.prototype.getFullInformation = function () {
-      throw new Error(
-        "please implement function will return a string containing the value" +
-          "of all available properties."
-      );
-    };
-    //Returns the price for n products of the given type in formatted form, for example: "$12.40"
-    this.prototype.getPriceForQuantity = function (int) {
-      throw new Error(
-        "Please implement functin will Returns the price for n products of the " +
-          "given type in formatted form, for example: $12.40"
-      );
-    };
+
     //Returns the image according to the passed parameter, if the parameter was not passed,
     // then the first image from the array.
     this.getImage = function getImage(n = 0) {
@@ -132,6 +119,20 @@ class AbstractProduct {
       return result / reviews.length;
     };
   }
+  //Will return a string containing the values ​​of all available properties.
+  getFullInformation = function () {
+    throw new Error(
+      "please implement function will return a string containing the value" +
+        "of all available properties."
+    );
+  };
+  //Returns the price for n products of the given type in formatted form, for example: "$12.40"
+  getPriceForQuantity = function (int) {
+    throw new Error(
+      "Please implement functin will Returns the price for n products of the " +
+        "given type in formatted form, for example: $12.40"
+    );
+  };
 }
 
 function Reviews(ID = "", author = "", date = {}, comment = {}, rating = []) {
@@ -145,5 +146,13 @@ function Reviews(ID = "", author = "", date = {}, comment = {}, rating = []) {
 
 module.exports = AbstractProduct;
 
-let abstPr = new AbstractProduct("123", "jeans", "wow wow", "5", "levais", [{}], ["1"]);
+let abstPr = new AbstractProduct(
+  "123",
+  "jeans",
+  "wow wow",
+  "5",
+  "levais",
+  [{}],
+  ["1"]
+);
 console.log(abstPr);
