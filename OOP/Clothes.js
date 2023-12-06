@@ -57,6 +57,18 @@ function Clothes(
     },
     get activeSize() {
       return this.activeSize;
+    },
+  };
+  //Adds a new value to the "sizes" array
+  this.addSize = function addSize(size) {
+    if (this.sizes.indexOf(size) == -1) {
+      this.sizes.push(size);
+    }
+  };
+  //Deletes the values ​​of the "sizes" array by the given key.
+  this.deleteSize = function deleteSize(size) {
+    if (this.sizes.indexOf(size) !== -1) {
+      this.sizes.splice(this.sizes.indexOf(size, 0), 1);
     }
   };
 }
@@ -71,20 +83,24 @@ Clothes.prototype.getFullInformation = function () {
   Price:${this.price}, Brand:${this.brand}, Quantity:${this.quantity}, 
   Data:${this.date}, 
   Revievs:${this.reviews}, Images:${this.images} `;
-  console.log(fullInfo);
-
-  let info = Array.from(arguments);
-  console.log(info);
-
-  return info;
+  //console.log(fullInfo);
+  return fullInfo;
 };
 
 Clothes.prototype.getPriceForQuantity = function (quantity) {
   return `"\$${this.price * quantity}"`;
 };
 
-module.exports = Clothes;
 
-// let coath = new Clothes("mex", "red", "1212");
-// console.log(coath);
+module.exports = Clothes;
+// module.exports = {
+//   Clothes: Clothes,
+//   Reviews: Reviews,
+//   searchProducts: searchProducts,
+//   sortProducts: sortProducts,
+// };
+
+//let coath = new Clothes("mex", "red", "1212");
+//coath.getFullInformation();
+//console.log(coath.getFullInformation());
 // console.log("********** " + coath.ID);

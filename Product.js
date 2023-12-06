@@ -161,6 +161,8 @@ function sortID(a, b) {
   return +a.ID - +b.ID;
 }
 
+module.exports = Product;
+
 let prod = new Product(12331233, "jeck");
 prod.name = "xxx";
 console.log(prod);
