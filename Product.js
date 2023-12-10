@@ -163,15 +163,15 @@ function sortID(a, b) {
 
 module.exports = Product;
 
-let prod = new Product(12331233, "jeck");
-prod.name = "xxx";
-console.log(prod);
-console.log(prod.ID);
-console.log(prod.sizes);
-prod.addSize("XXXL");
-console.log(prod.sizes);
-prod.deleteSize("XL");
-console.log(prod.prototype.__proto__);
-console.log(Object.keys(prod));
-console.log(prod.valueOf());
-console.log(prod.toString());
+// let prod = new Product(12331233, "jeck");
+// prod.name = "xxx";
+// console.log(prod);
+// console.log(prod.ID);
+// console.log(prod.sizes);
+// prod.addSize("XXXL");
+// console.log(prod.sizes);
+// prod.deleteSize("XL");
+// console.log(prod.prototype.__proto__);
+// console.log(Object.keys(prod));
+// console.log(prod.valueOf());
+// console.log(prod.toString());
