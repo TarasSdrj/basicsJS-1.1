@@ -70,6 +70,9 @@ function AbstractProduct(
     get images() {
       return this.images;
     },
+    get reviews() {
+      return this.reviews;
+    },
   };
 
   /*universal method for getting and setting object properties.
@@ -165,10 +168,6 @@ function Reviews(ID = "", author = "", date = {}, comment = "", rating = []) {
 
 module.exports = AbstractProduct;
 
-// module.exports = {
-//   AbstractProduct:AbstractProduct,
-//   Reviews:Reviews
-// };
 
 // let abstrPr = new AbstractProduct(
 //   "123",
@@ -183,3 +182,5 @@ module.exports = AbstractProduct;
 // abstrPr.setGet("price");
 // abstrPr.setGet("price","22");
 // abstrPr.setGet("price");
+// abstrPr.addReview(('123', 'Jhon',{}, 'extremely useful thing', {'service': 5, 'price':4, 'value':3,'quality':5}));
+// console.log(AbstractProduct.reviews);

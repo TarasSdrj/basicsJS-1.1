@@ -74,7 +74,7 @@ function Clothes(
 }
 Clothes.prototype = Object.create(AbstractProduct.prototype);
 Clothes.prototype.constructor = Clothes;
-
+//Will return a string containing the values ​​of all available properties.
 Clothes.prototype.getFullInformation = function () {
   let fullInfo = `  Material:${this.material}, Color:${this.color},
   ID:${this.ID}, Name: ${this.name},
@@ -86,7 +86,7 @@ Clothes.prototype.getFullInformation = function () {
   //console.log(fullInfo);
   return fullInfo;
 };
-
+//Returns the price for n products of the given type in formatted form, for example: "$12.40"
 Clothes.prototype.getPriceForQuantity = function (quantity) {
   return `"\$${this.price * quantity}"`;
 };
